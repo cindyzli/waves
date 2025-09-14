@@ -1,7 +1,7 @@
 import yt_dlp
 from pydub import AudioSegment
 import os
-
+#only mp3, need mp4 -> maybe can do it once find musecore that matches??
 def youtube_to_mp3(url, output_folder="downloads"):
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
@@ -20,5 +20,5 @@ def youtube_to_mp3(url, output_folder="downloads"):
         ydl.download([url])
 
 
-url = "https://youtu.be/P8Bsluvg44g?si=AuDrLxSO06UFp-sg" 
+url = "https://www.youtube.com/watch?v=oHTuKM8YuJI&list=RDoHTuKM8YuJI&start_radio=1&ab_channel=ichizupiano" 
 youtube_to_mp3(url)

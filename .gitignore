@@ -1,0 +1,5 @@
+mt3/
+.env
+queryingmetadata/results_cleaned_python.csv
+queryingmetadata/results.csv
+queryingmetadata/final_urls.txt
