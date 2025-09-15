@@ -7,9 +7,10 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 #this prompt sucks, havent run yet. need a clearer idea of what llm purpose is because think everything can be done through first filtering?
 #showing the thumbnail is too expensive i think
 PROJECT_PROMPT = """
-You are helping filter YouTube videos for a dataset of real piano performances.
+You are helping filter YouTube videos for a dataset of real piano playing showing hands to later match with sheet music.
 Keep only videos that look like people playing piano pieces (at home not in concerts) that show their hands in either a birds eye view of from the side. Or any view you can see the hands on the keys.
 Exclude tutorials, lessons, Synthesia visualizations, sheet music explainers, or channels dedicated to teaching.
+If there's sheet music linked in the description, definitely keep it if it's a free resource like MuseScore or IMSLP or Google Drive or PDF, definitely remove it if it's someone's personaly website or paid site like MusicNotes or SheetMusicPlus.
 Return YES if the video is relevant, NO otherwise.
 """
 
@@ -48,4 +49,4 @@ def sift_videos(input_csv: str, output_csv: str):
     print(f"Filtered {len(results)} relevant videos into {output_csv}")
 
 if __name__ == "__main__":
-    sift_videos("results_cleaned.csv", "final.csv")
+    sift_videos("results_cleaned_python.csv", "final.csv")
